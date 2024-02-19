@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"public/css/main.scss"
+	],
+	"names": [],
+	"mappings": ""
+}
