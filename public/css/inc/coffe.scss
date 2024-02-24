@@ -1,0 +1,162 @@
+.start-button {
+
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: auto;
+    font-size: 20px;
+    letter-spacing: 5px;
+
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    color: $nav-text-color; 
+    background-color: $nav-background-color; 
+    backdrop-filter: blur(5px);
+    box-shadow: $nav-boxshadow-color; 
+    border-radius: 10px;
+    transition: all .2s ease-in;
+    padding: 5px 10px; 
+    min-width: 4rem;
+    height: 4rem;
+    line-height: 4rem; 
+    width: 300px;
+    display: block;
+    margin: 0 auto; 
+    text-align: center; 
+}
+
+.start-button:hover {
+    background: $hover-bg-color; 
+    color: rgb(115, 97, 97);
+}
+
+
+
+
+
+
+#about-order-information {
+    display: none;
+}
+
+#beverage-selection{
+    display: block;
+}
+
+.beverage-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    grid-gap: 20px; 
+    justify-items: center; 
+    align-items: center; 
+    padding: 20px;
+    margin: auto; 
+    max-width: 30%; 
+}
+.beverage-container div h2 {
+    cursor: pointer;
+    border: none;
+    color: $nav-text-color; 
+    background-color: $nav-background-color; 
+    backdrop-filter: blur(5px);
+    box-shadow: $nav-boxshadow-color; 
+    border-radius: 10px;
+    transition: all .2s ease-in;
+    min-width: 14rem;
+    text-align: center;
+    display: block;
+    margin: 0 auto; 
+    height: 4rem;
+    line-height: 4rem;
+}
+.beverage-container div h2:hover {
+    background: $hover-bg-color; 
+    color: rgb(115, 97, 97);
+}
+
+.beverage-container h2 {
+    cursor: pointer;
+}
+
+
+
+
+.selected {
+    color: $nav-background-color; 
+}
+
+
+@media (max-width: 768px) {
+    .beverage-container {
+        grid-template-columns: 1fr; 
+    }
+
+    .beverage-container div {
+        margin-bottom: 10px; 
+    }
+
+    #about-order-information .bruh {
+        grid-template-columns: 1fr; 
+    }
+    #about-order-information .mega-bruh {
+        grid-template-columns: 1fr; 
+    }
+}
+
+@media (max-width: 480px) {
+
+    .beverage-container {
+        grid-template-columns: 1fr; 
+    }
+
+    .beverage-container div {
+        margin-bottom: 10px; 
+    }
+
+    #about-order-information .bruh {
+        grid-template-columns: 1fr; 
+    }
+    #about-order-information .mega-bruh {
+        grid-template-columns: 1fr; 
+    }
+}
+
+#condiment-selection button{
+    cursor: pointer;
+    border: none;
+    color: $nav-text-color; 
+    background-color: $nav-background-color; 
+    backdrop-filter: blur(5px);
+    box-shadow: $nav-boxshadow-color; 
+    border-radius: 10px;
+    transition: all .2s ease-in;
+    min-width: 14rem;
+    text-align: center;
+    display: block;
+    margin: 0 auto; 
+    height: 4rem;
+    line-height: 4rem;
+}
+
+.bruh {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    grid-gap: 20px; 
+    justify-items: center; 
+    align-items: center; 
+    padding: 20px;
+    margin: auto; 
+    max-width: 30%; 
+}
+
+.my-order{
+    background-color: $hover-bg-color;
+    border-radius: 10px;
+}
+
+.mega-bruh{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px; 
+}

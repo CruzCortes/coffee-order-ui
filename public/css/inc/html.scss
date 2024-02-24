@@ -1,0 +1,136 @@
+html {
+    scroll-behavior: auto; padding: 0; margin: 0;
+  }
+::-webkit-scrollbar {display: none;}
+::-webkit-scrollbar-thumb:hover {display: block;}
+::-webkit-scrollbar-thumb {background-color: rgba(0, 0, 0, 0.5); border-radius: 10px;}
+body {padding: 0; margin: 0; background-color: $body-bg-color; overflow-y: scroll;}
+
+
+
+header {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: auto;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    position: fixed; 
+    z-index: 10;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 0 10rem; 
+    gap: 20px;
+
+}
+
+.title-container h1 {
+    color: $nav-background-color;
+    text-align: left;
+}
+
+.links-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px; 
+}
+
+.links-container a {
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    color: $nav-text-color;
+    display: flex; 
+    align-self: auto; 
+    align-items: center;
+    justify-content: center; 
+    width: auto; 
+    min-width: 4rem;
+    height: 2rem; 
+    background-color: $nav-background-color;
+    backdrop-filter: blur(5px); 
+    box-shadow: $nav-boxshadow-color;
+    border-radius: 10px;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    padding: 5px;
+}
+.links-container a:hover{
+    background: $hover-bg-color;
+    color: black;
+}
+
+
+@media (max-width: 768px) {
+
+    header {
+        position: static; 
+    }
+
+    .header-container {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+
+    .title-container, .links-container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .title-container h1 {
+        text-align: center;
+    }
+
+    .links-container {
+        flex-direction: column; 
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    header {
+        position: static; 
+    }
+
+    .header-container {
+        padding: 10px; 
+    }
+    .title-container{
+        text-align: center;
+    }
+}
+
+.main-content{
+    h1{
+        font-family: 'Montserrat', sans-serif;
+        -webkit-font-smoothing: auto;
+        font-size: 30px;
+        text-align: center;
+    }
+    h2{
+        font-family: 'Montserrat', sans-serif;
+        -webkit-font-smoothing: auto;
+        font-size: 19px;
+        text-align: center;
+    }
+    p {
+        color: #3b3a3a;
+        font-family: 'Montserrat', sans-serif;
+        -webkit-font-smoothing: auto;
+        font-size: 14px;
+        text-align: center;
+    }
+    .description{
+        width: 60%;
+        text-align: center;
+        justify-content: center;
+        margin: 0 auto; 
+    }
+    
+}
