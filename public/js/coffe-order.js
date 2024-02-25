@@ -20,7 +20,20 @@ var prices = {
   // Function to update condiment display
   function updateCondimentDisplay() {
     for (let i = 1; i <= 4; i++) {
-      document.getElementById('condiment' + i).innerText = orderInformation.condiments[i - 1] || 'None';
+      const condimentSpan = document.getElementById('condiment' + i);
+      const condimentValue = orderInformation.condiments[i - 1] || 'None';
+      condimentSpan.innerText = condimentValue;
+      condimentSpan.parentElement.innerHTML = `Condiment ${i}: <span id="condiment${i}">${condimentValue}</span>` + (condimentValue !== 'None' ? `<button class="remove-condiment" onclick="removeCondiment('${condimentValue}')">X</button>` : '');
+    }
+  }
+  
+  // New function to remove a clicked condiment
+  function removeCondiment(condiment) {
+    const index = orderInformation.condiments.indexOf(condiment);
+    if (index > -1) {
+      orderInformation.condiments.splice(index, 1);
+      orderInformation.total -= prices[condiment];
+      updateCondimentDisplay(); // Update the display after removal
     }
   }
   
@@ -85,3 +98,22 @@ var prices = {
   document.getElementById('about-order-information').style.display = 'none'; 
   document.querySelector('.total-cost').style.display = 'none'; 
   
+
+  // Add an event listener to the selected beverage button to reset the order
+document.querySelector('.selected-beverage-button').addEventListener('click', resetOrder);
+
+function resetOrder() {
+  // Reset the order information
+  orderInformation.beverage = null;
+  orderInformation.condiments = [];
+  orderInformation.total = 0;
+
+  // Update UI to initial state
+  document.getElementById('about-order-information').style.display = 'none'; 
+  document.querySelector('.total-cost').style.display = 'none';
+  document.getElementById('beverage-selection').style.display = 'block';
+  document.getElementById('selected-beverage').innerText = 'None';
+  updateCondimentDisplay(); // Call this function to reset condiment displays to 'None'
+}
+
+// Make sure to call resetOrder function where needed to reset the UI and order info
