@@ -7,7 +7,7 @@ var orderInformation = {
 
 // Fetch prices from the backend
 async function fetchPrices() {
-  const response = await fetch('http://localhost:8080/orders/prices');
+  const response = await fetch('https://coffee-order-latest-8gm9.onrender.com/orders/prices');
   return response.json();
 }
 
@@ -62,7 +62,7 @@ async function selectBeverage(beverage) {
 // Function to confirm the order and generate a random order ID
 async function confirmOrder() {
   try {
-    const response = await fetch('http://localhost:8080/orders', {
+    const response = await fetch('https://coffee-order-latest-8gm9.onrender.com/orders', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
